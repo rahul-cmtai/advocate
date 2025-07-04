@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Attractive Premium Legal Website Light Theme Colors with Gray Backgrounds */
+    --background: 210 20% 98%;      /* #f7fafc */
+    --foreground: 222 32% 15%;      /* #1a2233 */
+
+    --card: 220 14% 96%;            /* #f3f4f6 */
+    --card-foreground: 222 32% 15%; /* #1a2233 */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 32% 15%;
+
+    --primary: 48 95% 48%;          /* #eab308 */
+    --primary-foreground: 222 32% 15%; /* #1a2233 */
+
+    --secondary: 210 20% 92%;       /* #e5e7eb */
+    --secondary-foreground: 222 32% 15%;
+
+    --muted: 216 33% 90%;           /* #e0e7ef */
+    --muted-foreground: 217 19% 41%; /* #64748b */
+
+    --accent: 198 94% 60%;          /* #38bdf8 */
+    --accent-foreground: 0 0% 100%; /* #ffffff */
+
+    --destructive: 0 84% 60%;       /* #ef4444 */
+    --destructive-foreground: 0 0% 100%; /* #fff */
+
+    --border: 210 27% 86%;          /* #cbd5e1 */
+    --input: 210 27% 86%;           /* #cbd5e1 */
+    --ring: 48 95% 48%;             /* #eab308 */
+
+    --radius: 0.75rem;
+
+    /* Premium gradients and shadows */
+    --gradient-gold: linear-gradient(135deg, hsl(48 95% 48%), hsl(48 95% 58%));
+    --shadow-gold: 0 0 40px hsl(48 95% 48% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(210 20% 98% / 0.10);
+    --glow-gold: 0 0 20px hsl(48 95% 48% / 0.15);
+
+    --orange: 28 98% 54%;             /* #ff9800 */
+    --orange-foreground: 0 0% 100%;  /* #fff */
+    --gradient-orange: linear-gradient(135deg, hsl(28 98% 54%), hsl(28 98% 64%));
+    --shadow-orange: 0 0 40px hsl(28 98% 54% / 0.2);
+    --glow-orange: 0 0 20px hsl(28 98% 54% / 0.15);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Keep .dark class for future use */
+  .dark {
+    --background: 0 0% 5.1%;
+    --foreground: 60 9% 97.3%;
+    --card: 0 0% 10.2%;
+    --card-foreground: 60 9% 97.3%;
+    --popover: 0 0% 10.2%;
+    --popover-foreground: 60 9% 97.3%;
+    --primary: 45 67% 53.3%;
+    --primary-foreground: 0 0% 5.1%;
+    --secondary: 0 0% 10.2%;
+    --secondary-foreground: 60 9% 97.3%;
+    --muted: 0 0% 15.3%;
+    --muted-foreground: 0 0% 63.1%;
+    --accent: 45 67% 53.3%;
+    --accent-foreground: 0 0% 5.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9% 97.3%;
+    --border: 0 0% 20.4%;
+    --input: 0 0% 15.3%;
+    --ring: 45 67% 53.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100px;
+  }
+  40%, 100% {
+    background-position: 300px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-gold {
+    @apply bg-primary text-primary-foreground hover:shadow-[var(--shadow-gold)] transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:shadow-[var(--glow-gold)] transition-all duration-300;
+  }
+
+  .btn-orange {
+    @apply bg-[hsl(var(--orange))] text-[hsl(var(--orange-foreground))] hover:shadow-[var(--shadow-orange)] transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline-orange {
+    @apply border-2 border-[hsl(var(--orange))] text-[hsl(var(--orange))] bg-transparent hover:bg-[hsl(var(--orange))] hover:text-[hsl(var(--orange-foreground))] hover:shadow-[var(--glow-orange)] transition-all duration-300;
+  }
+
+  /* Mobile CTA Button */
+  .mobile-cta-btn {
+    @apply w-full rounded-lg text-base font-medium py-4 px-6 sm:w-auto sm:px-8;
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-[var(--shadow-elegant)];
+  }
+
+  /* Golden Glow Hover Effect */
+  .glow-gold-hover {
+    @apply transition-all duration-300 hover:shadow-[var(--glow-gold)];
+  }
+
+  /* Heading Styles */
+  .heading-display {
+    @apply text-4xl md:text-6xl font-bold tracking-tight;
+    font-family: var(--font-heading);
+  }
+
+  .heading-large {
+    @apply text-3xl md:text-4xl font-semibold;
+    font-family: var(--font-heading);
+  }
+
+  .heading-medium {
+    @apply text-2xl md:text-3xl font-semibold;
+    font-family: var(--font-heading);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .glow-orange-hover {
+    @apply transition-all duration-300 hover:shadow-[var(--glow-orange)];
+  }
+
+  .bg-orange-accent {
+    @apply bg-[hsl(var(--orange))] text-[hsl(var(--orange-foreground))];
+  }
+
+  .border-orange-accent {
+    @apply border-[hsl(var(--orange))];
+  }
+
+  .text-orange-accent {
+    @apply text-[hsl(var(--orange))];
+  }
+
+  .gradient-orange {
+    background: var(--gradient-orange);
+  }
+  
+  .text-gradient-orange {
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .bg-gradient-orange {
+    background: var(--gradient-orange);
+    color: hsl(var(--orange-foreground));
+  }
+  
+  /* Testimonial Section Styles */
+  .testimonial-img-frame {
+    position: relative;
+    padding: 10px;
+  }
+  
+  .testimonial-img-frame img {
+    filter: contrast(1.05) saturate(1.1);
+    transition: all 0.5s ease;
+    display: block;
+    width: 100%;
+  }
+  
+  .testimonial-img-frame:hover img {
+    transform: scale(1.02);
+  }
+  
+  .testimonial-img-frame::before,
+  .testimonial-img-frame::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+  }
+  
+  .testimonial-img-frame::before {
+    top: 0;
+    left: 0;
+    border-top: 3px solid hsl(var(--orange));
+    border-left: 3px solid hsl(var(--orange));
+  }
+  
+  .testimonial-img-frame::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid hsl(var(--primary));
+    border-right: 3px solid hsl(var(--primary));
+  }
+  
+  .quote-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .quote-card::before {
+    content: "\201C";
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    font-size: 150px;
+    font-family: serif;
+    color: hsl(var(--orange));
+    opacity: 0.1;
+  }
+  
+  /* Testimonial Marquee Styles */
+  .testimonial-card {
+    @apply glass-card transition-all duration-300;
+    transform: translateY(0);
+  }
+  
+  .testimonial-card:hover {
+    @apply shadow-[var(--glow-orange)];
+    transform: translateY(-5px);
+  }
+
+  /* Responsive CTA Card */
+  @media (max-width: 640px) {
+    .cta-card {
+      @apply p-6;
+    }
+    
+    .cta-heading {
+      @apply text-2xl mb-4;
+    }
+    
+    .cta-text {
+      @apply text-base mb-6;
+    }
+    
+    .cta-button {
+      @apply w-full py-4 px-6 text-base;
+    }
+  }
+
+  /* Credential card styles */
+  .credential-icon {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  .credential-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .credential-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 8s infinite linear;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .credential-card:hover::before {
+    opacity: 1;
+  }
+}
