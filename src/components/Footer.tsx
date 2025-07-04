@@ -73,6 +73,8 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
+                  target={social.href.startsWith('http') ? '_blank' : undefined}
+                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="w-10 h-10 bg-muted/50 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 glow-gold-hover"
                   aria-label={social.name}
                 >
@@ -90,12 +92,12 @@ const Footer = () => {
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-xs text-white/80 hover:text-orange-accent transition-smooth">
+            <Link to="/privacy" className="text-xs text-white/80 hover:text-orange-accent transition-smooth">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-white/80 hover:text-orange-accent transition-smooth">
+            </Link>
+            <Link to="/terms" className="text-xs text-white/80 hover:text-orange-accent transition-smooth">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

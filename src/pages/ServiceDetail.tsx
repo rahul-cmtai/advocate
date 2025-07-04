@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { getDocument } from "@/lib/firebase";
 import { Check } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
+import legalHeroBg from "@/assets/legal-hero-bg.jpg";
 
 interface Service {
   id: string;
@@ -259,8 +260,8 @@ const ServiceDetail = () => {
       <Navigation />
       {/* Service Details Banner - Modern, dynamic, with gradient and glassmorphism */}
       <div className="relative w-full bg-black py-32 md:py-44 flex items-center justify-center shadow-md overflow-hidden">
-        {/* Unsplash background image */}
-        <div className="absolute inset-0 z-0" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1555375771-5b1c6a5b16c0?auto=format&fit=crop&w=1500&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.85) contrast(1.1)'}} />
+        {/* Background image */}
+        <div className="absolute inset-0 z-0" style={{backgroundImage: `url(${legalHeroBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.85) contrast(1.1)'}} />
         {/* Gradient and noise overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-yellow-400/30 to-background/60 opacity-80 z-10" />
         <div className="absolute top-0 left-0 w-full h-full bg-noise opacity-10 z-20" />

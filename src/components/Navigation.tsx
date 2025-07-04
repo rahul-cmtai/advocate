@@ -50,8 +50,8 @@ const Navigation = () => {
               </Link>
             ))}
             
-            <Button className="btn-orange">
-              Book Consultation
+            <Button asChild className="btn-orange">
+              <Link to="/contact">Book Consultation</Link>
             </Button>
           </div>
 
@@ -84,7 +84,9 @@ const Navigation = () => {
                     </DrawerClose>
                   ))}
                   <DrawerClose asChild>
-                    <Button className="btn-orange w-full mt-4">Book Consultation</Button>
+                    <Button asChild className="btn-orange w-full mt-4">
+                      <Link to="/contact">Book Consultation</Link>
+                    </Button>
                   </DrawerClose>
                 </div>
               </DrawerContent>

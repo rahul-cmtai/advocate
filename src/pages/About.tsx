@@ -240,7 +240,7 @@ const About = () => {
               <motion.div variants={itemVariants}>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
                   <Button size="lg" className="btn-gold sm:mr-4 w-full sm:w-auto" asChild>
-                    <Link to="/contact">Schedule Consultation</Link>
+                    <Link to="/contact">Contact Now</Link>
                   </Button>
                   <Button size="lg" className="btn-outline-orange w-full sm:w-auto" asChild>
                     <Link to="/services">View Services</Link>

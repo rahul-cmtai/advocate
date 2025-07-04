@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import Privacy from "./Privacy";
+import Terms from "./Terms";
 
 const Index = () => {
   return (
@@ -29,12 +31,8 @@ const Index = () => {
             <p className="cta-text text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
               Transform legal challenges into strategic advantages. Let's discuss how I can help protect and grow your business.
             </p>
-            <Button 
-              size="lg" 
-              className="cta-button btn-gold mobile-cta-btn text-base md:text-lg w-full sm:w-auto" 
-              asChild
-            >
-              <Link to="/contact">Schedule a Strategy Call</Link>
+            <Button asChild>
+              <Link to="/contact">Book Consultation</Link>
             </Button>
           </Card>
         </div>

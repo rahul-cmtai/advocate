@@ -92,7 +92,7 @@ const PracticeAreas = () => {
               Get expert legal guidance tailored to your business needs
             </p>
             <Button size="lg" className="btn-gold" asChild>
-              <Link to="/contact">Schedule a Consultation</Link>
+              <Link to="/services">Learn More</Link>
             </Button>
           </Card>
         </div>

@@ -304,11 +304,11 @@ const Services = () => {
               Every business faces unique legal challenges. Let's discuss how I can help you navigate yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-gold">
-                Get Legal Help Now
+              <Button asChild>
+                <Link to="/contact">Book Consultation</Link>
               </Button>
-              <Button size="lg" variant="outline" className="btn-outline-gold">
-                View Case Studies
+              <Button asChild>
+                <Link to="/services">Learn More</Link>
               </Button>
             </div>
           </Card>

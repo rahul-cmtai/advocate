@@ -69,8 +69,17 @@ const BlogDetail = () => {
         // First try to get from Firestore
         const blogData = await getDocument('blogs', id);
         
-        if (blogData) {
-          setBlog(blogData);
+        if (blogData && typeof blogData === 'object') {
+          setBlog({
+            id: (blogData as any).id || id,
+            title: (blogData as any).title || '',
+            summary: (blogData as any).summary || '',
+            content: (blogData as any).content || '',
+            createdAt: (blogData as any).createdAt || new Date(),
+            shortDescription: (blogData as any).shortDescription,
+            imageUrl: (blogData as any).imageUrl,
+            tags: (blogData as any).tags,
+          });
         } else {
           // If not found in Firestore, try original data
           const foundBlog = originalBlogs.find((b) => b.id === id || b.id === Number(id)?.toString());
@@ -205,6 +214,17 @@ const BlogDetail = () => {
     <>
       <ScrollToTop />
       <Navigation />
+      {/* Blog Details Banner - Modern, dynamic, with gradient and glassmorphism */}
+      <div className="relative w-full bg-black py-32 md:py-44 flex items-center justify-center shadow-md overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0" style={{backgroundImage: `url(${legalHeroBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.85) contrast(1.1)'}} />
+        {/* Gradient and noise overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-yellow-400/30 to-background/60 opacity-80 z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-noise opacity-10 z-20" />
+        <h1 className="relative z-30 text-4xl md:text-5xl font-extrabold text-yellow-400 tracking-wide drop-shadow-lg uppercase animate-fade-in font-display text-center px-4">
+          {blog?.title || 'Blog Details'}
+        </h1>
+      </div>
       <main className="pb-16">
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-muted/50 to-background">
@@ -271,11 +291,8 @@ const BlogDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="flex flex-col sm:flex-row justify-between gap-4">
-                <Button asChild variant="outline">
-                  <Link to="/blog" className="flex items-center gap-2">
-                    <ArrowLeft className="h-4 w-4" />
-                    Back to All Articles
-                  </Link>
+                <Button asChild>
+                  <Link to="/blog">Back to Blog</Link>
                 </Button>
                 
                 <div className="flex gap-2">

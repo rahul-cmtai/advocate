@@ -102,12 +102,8 @@ const BlogCard: React.FC<{ blog: BlogPost }> = ({ blog }) => {
       </CardContent>
       
       <CardFooter className="px-6 pb-6 pt-0">
-        <Button 
-          variant="outline" 
-          className="w-full"
-          onClick={() => navigate(`/blog/${blog.id}`)}
-        >
-          Read More
+        <Button asChild>
+          <Link to={`/blog/${blog.id}`}>Read More</Link>
         </Button>
       </CardFooter>
     </Card>

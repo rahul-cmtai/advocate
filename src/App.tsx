@@ -14,6 +14,8 @@ import BlogDetail from "./pages/BlogDetail";
 import ServiceDetail from "./pages/ServiceDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import seedDatabase from "./lib/seedData";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 // Admin imports
 import Login from "./pages/admin/Login";
@@ -22,6 +24,7 @@ import ContactLeads from "./pages/admin/ContactLeads";
 import AdminServices from "./pages/admin/Services";
 import AdminBlogs from "./pages/admin/Blogs";
 import RequireAdminAuth from "./components/ui/require-admin-auth";
+import FloatingButton from "./components/FloatingButton";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +50,8 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             
             {/* Admin Routes */}
             <Route path="/admin/login" element={<Login />} />
@@ -60,6 +65,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
+      <FloatingButton />
     </QueryClientProvider>
   );
 };
