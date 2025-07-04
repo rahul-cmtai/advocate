@@ -8,13 +8,19 @@ const HeroSection = () => {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.9)), url(${legalHeroBg})`,
+        backgroundImage: `url(${legalHeroBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      {/* Gradient + Glass Overlay */}
+      <div className="absolute inset-0 z-0"
+        style={{
+          background: 'rgba(255, 152, 0, 0.18)', // very light orange overlay
+        }}
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
@@ -24,7 +30,7 @@ const HeroSection = () => {
               <span className="text-orange-accent"> Modern Businesses</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl text-white mb-8 leading-relaxed max-w-2xl">
               Helping startups, innovators, and global clients protect and grow with expert legal counsel.
             </p>
 
@@ -43,15 +49,15 @@ const HeroSection = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-8 text-sm text-muted-foreground">
+            <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-8 text-sm text-white">
               <div className="flex items-center">
-                <span className="text-orange-accent font-semibold mr-1">15+</span> Years Experience
+                <span className="text-[#ffff00] font-semibold mr-1">15+</span> Years Experience
               </div>
               <div className="flex items-center">
-                <span className="text-orange-accent font-semibold mr-1">500+</span> Cases Won
+                <span className="text-[#ffff00] font-semibold mr-1">500+</span> Cases Won
               </div>
               <div className="flex items-center">
-                <span className="text-orange-accent font-semibold mr-1">100+</span> Startups Helped
+                <span className="text-[#ffff00] font-semibold mr-1">100+</span> Startups Helped
               </div>
             </div>
           </div>
