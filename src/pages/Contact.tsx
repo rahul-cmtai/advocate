@@ -15,7 +15,8 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    issue: "",
+    subject: "",
+    customSubject: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
@@ -26,8 +27,12 @@ const Contact = () => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleIssueChange = (value: string) => {
-    setForm({ ...form, issue: value });
+  const handleSubjectChange = (value: string) => {
+    setForm({ ...form, subject: value, customSubject: "" });
+  };
+
+  const handleCustomSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, customSubject: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,12 +41,14 @@ const Contact = () => {
     setSuccess("");
     setError("");
     try {
+      const finalSubject = form.subject === "Other" ? form.customSubject : form.subject;
       await addDoc(collection(db, "contactLeads"), {
         ...form,
+        subject: finalSubject,
         createdAt: Timestamp.now(),
       });
       setSuccess("Your message has been sent successfully!");
-      setForm({ name: "", email: "", phone: "", issue: "", message: "" });
+      setForm({ name: "", email: "", phone: "", subject: "", customSubject: "", message: "" });
     } catch (err) {
       setError("Failed to send message. Please try again.");
     } finally {
@@ -140,20 +147,36 @@ const Contact = () => {
                       </div>
                       <div>
                         <Label htmlFor="issue" className="text-foreground">Legal Issue Type</Label>
-                        <Select value={form.issue} onValueChange={handleIssueChange}>
+                        <Select value={form.subject} onValueChange={handleSubjectChange}>
                           <SelectTrigger className="mt-2 bg-muted/50 border-border/50">
                             <SelectValue placeholder="Select issue type" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="contract">Contract Drafting/Review</SelectItem>
-                            <SelectItem value="fintech">Fintech & Banking</SelectItem>
-                            <SelectItem value="ibc">IBC & Insolvency</SelectItem>
-                            <SelectItem value="ai">AI & Technology Law</SelectItem>
-                            <SelectItem value="other">Other Legal Matter</SelectItem>
+                            <SelectItem value="Contract Drafting/Review">Contract Drafting/Review</SelectItem>
+                            <SelectItem value="Fintech & Banking">Fintech & Banking</SelectItem>
+                            <SelectItem value="IBC & Insolvency">IBC & Insolvency</SelectItem>
+                            <SelectItem value="AI & Technology Law">AI & Technology Law</SelectItem>
+                            <SelectItem value="Other Legal Matter">Other Legal Matter</SelectItem>
+                            <SelectItem value="Other">Other (Custom)</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
                     </div>
+
+                    {form.subject === "Other" && (
+                      <div>
+                        <Label htmlFor="customSubject" className="text-foreground">Custom Subject *</Label>
+                        <Input 
+                          id="customSubject" 
+                          type="text" 
+                          placeholder="Please specify your legal issue..." 
+                          className="mt-2 bg-muted/50 border-border/50"
+                          value={form.customSubject}
+                          onChange={handleCustomSubjectChange}
+                          required={form.subject === "Other"}
+                        />
+                      </div>
+                    )}
 
                     <div>
                       <Label htmlFor="message" className="text-foreground">Message *</Label>

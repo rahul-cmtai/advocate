@@ -270,7 +270,7 @@ const Services = () => {
               How I <span className="text-primary">Work</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              A streamlined process designed for efficiency and results
+            A streamlined process designed for efficiency and results
             </p>
           </div>
 

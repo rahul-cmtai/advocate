@@ -12,44 +12,85 @@ const About = () => {
     {
       year: "2008",
       title: "Law Graduation",
-      description: "Graduated with honors from [Law University], specializing in corporate and commercial law",
+      description: "Completed B.A. LL.B. (Hons.) from Aligarh Muslim University, building a strong foundation in constitutional, civil, and corporate legal frameworks.",
       icon: <BookOpen className="w-5 h-5" />
     },
     {
-      year: "2009-2015",
-      title: "Experience at Leading Firms",
-      description: "Gained extensive experience in corporate litigation, contract drafting, and client advisory services",
+      year: "2010",
+      title: "LL.M in Corporate & Commercial Law",
+      description: "Pursued LL.M. at Dr. Ram Manohar Lohiya National Law University, Lucknow, with a focus on corporate transactions, business regulations, and contract law—sharpening legal acumen in business-focused practice.",
+      icon: <Award className="w-5 h-5" />
+    },
+    {
+      year: "2010–2016",
+      title: "Litigation & Early Regulatory Practice",
+      description: "Started legal career under Senior Advocate Mr. Mahesh Chandra Saraswat, representing clients in criminal, civil, and commercial disputes across trial courts and administrative forums. Joined the Competition Commission of India (CCI) as a Law Expert, advising on anti-competitive agreements, market dominance cases, and regulatory policy.",
+      details: [
+        "Briefed Commission members on cases pending before judicial bodies",
+        "Conducted legal research into competition trends and sectoral impact"
+      ],
       icon: <Briefcase className="w-5 h-5" />
     },
     {
-      year: "2016-2020",
-      title: "NCLT Case Wins",
-      description: "Successfully represented clients in high-profile NCLT cases, establishing expertise in insolvency law",
+      year: "2016–2020",
+      title: "Public Sector & Insolvency Law Experience",
+      description: "Served in key legal and research roles with prominent regulatory authorities:",
+      details: [
+        "Research Officer, Central Electricity Regulatory Commission (CERC) - Drafted legal responses for pending cases before the Supreme Court, High Courts, and Electricity Appellate Tribunal",
+        "Research Associate, Insolvency and Bankruptcy Board of India (IBBI) - Contributed to formulation of legal responses and regulatory insights under the IBC, created framework for analyzing fraudulent transactions during insolvency proceedings"
+      ],
       icon: <Trophy className="w-5 h-5" />
     },
     {
-      year: "2021-Present",
-      title: "LegalTech Speaking & Innovation",
-      description: "Leading voice in AI law and legal technology, helping startups navigate emerging regulations",
+      year: "2020–Present",
+      title: "Independent Counsel & Corporate Legal Consultant",
+      description: "Founded and now lead a corporate legal consultancy serving startups, growth-stage companies, and established corporates across India and globally.",
+      details: [
+        "Advising on corporate structuring, co-founder/shareholder agreements, commercial contracts, ESOPs, and GDPR/data protection",
+        "Representing clients in high-stakes matters across forums, including Tata Steel Limited and Agilus Diagnostics Limited",
+        "Providing strategic counsel in IBC matters, NCLT/NCLAT representation, SARFAESI matters, and technology law",
+        "Drafted and negotiated international contracts, including software license agreements, distribution deals, and cross-border MoUs"
+      ],
       icon: <Star className="w-5 h-5" />
+    },
+    {
+      year: "2021–Present",
+      title: "Thought Leadership & LegalTech Advocacy",
+      description: "Recognized speaker and commentator on legal innovation, business law, and compliance strategy.",
+      details: [
+        "Guest lectures at BVIMR, training programs with International Business Intelligence",
+        "Legal podcasts & webinars on AI law, contracting excellence, and IBC trends",
+        "Featured in SuperLawyer and Investopedia for insights on legal risk and business growth"
+      ],
+      icon: <Clock className="w-5 h-5" />
     }
   ];
 
   const supportPoints = [
     {
-      icon: <Trophy className="w-5 h-5" />,
-      title: "15+ Years Experience",
-      description: "Solving complex legal challenges for businesses across India"
-    },
-    {
       icon: <Briefcase className="w-5 h-5" />,
-      title: "Industry Expertise",
-      description: "Specialized in corporate, tech, and insolvency law"
+      title: "Corporate & Transactional Advisory",
+      description: "Legal structuring, business formation, shareholder arrangements, ESOPs, and general counsel services"
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
-      title: "Client-Focused Approach",
-      description: "Strategic legal solutions that enable business growth"
+      title: "Contract Drafting & Commercial Agreements",
+      description: "SaaS contracts, licensing, NDAs, employment agreements, co-founder deals, and MoUs tailored for scale and compliance"
+    },
+    {
+      icon: <Trophy className="w-5 h-5" />,
+      title: "Insolvency & Restructuring (IBC)",
+      description: "IBC strategy, NCLT representation, fraudulent transaction analysis, and corporate debt resolution, backed by IBBI experience"
+    },
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "Fintech & Regulatory Compliance",
+      description: "Advisory on RBI, SEBI, SARFAESI, and digital payments—plus GDPR and Indian data privacy frameworks"
+    },
+    {
+      icon: <Star className="w-5 h-5" />,
+      title: "Dispute Resolution & Criminal Defense",
+      description: "Litigation in commercial disputes, cheque dishonour cases, and defense in complex criminal matters including POCSO and white-collar crime"
     }
   ];
 
@@ -118,11 +159,11 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-20 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center">
             
             {/* Left - Image with animations */}
             <motion.div 
-              className="flex justify-center lg:justify-start"
+              className="flex justify-center lg:justify-start lg:col-span-1"
               initial="hidden"
               animate="visible"
               variants={containerVariants}
@@ -190,6 +231,7 @@ const About = () => {
 
             {/* Right - Content with animations */}
             <motion.div
+              className="lg:col-span-2"
               initial="hidden"
               animate="visible"
               variants={containerVariants}
@@ -198,57 +240,128 @@ const About = () => {
                 className="heading-display text-foreground mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                 variants={itemVariants}
               >
-                Meet <span className="text-orange-accent">Advocate Gauri Saraswat</span>
+                Meet <span className="text-orange-accent">Gauri Saraswat, Advocate</span>
               </motion.h1>
+              
+              <motion.p 
+                className="text-lg text-orange-accent font-semibold mb-4"
+                variants={itemVariants}
+              >
+                Litigation | IBC & Contract Specialist | Regulatory & Technology Law Advisor
+              </motion.p>
               
               <motion.p 
                 className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed"
                 variants={itemVariants}
               >
-                With over 15 years of dedicated legal practice, I specialize in transforming complex legal challenges 
-                into strategic business advantages. My expertise spans corporate law, insolvency proceedings, 
-                fintech compliance, and emerging technology regulations.
+                I am a corporate lawyer with over 15+ years of experience helping businesses, startups, and institutions 
+                navigate complex legal and regulatory landscape. My practice is focused on delivering business-aligned 
+                legal solutions across corporate law, contractual obligations, insolvency matters and technology regulations.
               </motion.p>
-
-              {/* Support points */}
-              <motion.div 
-                className="space-y-4 mb-8"
-                variants={containerVariants}
+              
+              <motion.p 
+                className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed"
+                variants={itemVariants}
               >
-                {supportPoints.map((point, index) => (
-                  <motion.div 
-                    key={index}
-                    className="flex items-start gap-3 bg-muted/30 p-3 rounded-lg border border-border/50 hover:border-orange-accent/50 transition-all duration-300"
-                    variants={itemVariants}
-                    whileHover={{ 
-                      x: 10, 
-                      backgroundColor: "rgba(255,255,255,0.1)",
-                      boxShadow: "0 4px 12px rgba(234, 179, 8, 0.1)"
-                    }}
-                  >
-                    <div className="flex-shrink-0 mt-1 bg-orange-accent p-2 rounded-full text-white">
-                      {point.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{point.title}</h3>
-                      <p className="text-sm text-muted-foreground">{point.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+                My background includes serving at the Insolvency and Bankruptcy Board of India (IBBI), advising on complex 
+                financial matters, drafting high-stakes commercial agreements, and representing clients in forums across India. 
+                I combine legal precision with business understanding to help clients reduce risk, stay compliant, and grow with clarity.
+              </motion.p>
+              
+              <motion.p 
+                className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed"
+                variants={itemVariants}
+              >
+                Having worked with both private and public sector clients, I've advised on matters ranging from company 
+                structuring and shareholder agreements to data privacy, financial regulations, and high-value disputes 
+                in addition to my appearances before Supreme Court of India. My prior role at the Insolvency and Bankruptcy 
+                Board of India (IBBI) allowed me to contribute to critical regulatory work in the IBC framework, further 
+                deepening my understanding of corporate insolvency and stakeholder protection.
+              </motion.p>
+              
+              <motion.p 
+                className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed"
+                variants={itemVariants}
+              >
+                Beyond my practice, I am a regular speaker and legal educator, passionate about demystifying the law 
+                for business leaders, legal professionals, and students.
+              </motion.p>
 
               <motion.div variants={itemVariants}>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
                   <Button size="lg" className="btn-gold sm:mr-4 w-full sm:w-auto" asChild>
-                    <Link to="/contact">Contact Now</Link>
+                    <Link to="/contact">📞 Contact Now</Link>
                   </Button>
                   <Button size="lg" className="btn-outline-orange w-full sm:w-auto" asChild>
-                    <Link to="/services">View Services</Link>
+                    <Link to="/services">📑 View Services</Link>
                   </Button>
                 </div>
               </motion.div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Core Areas of Practice Section */}
+      <section className="py-16 bg-muted/30 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h2 
+              className="heading-medium text-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-orange-accent">🔍</span> Core Areas of Practice
+            </motion.h2>
+            
+            <motion.div 
+              className="w-20 h-1 bg-gradient-to-r from-orange-accent to-primary rounded-full mx-auto mt-4"
+              initial={{ width: 0 }}
+              whileInView={{ width: 80 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            ></motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            variants={staggerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {supportPoints.map((point, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -5, 
+                  transition: { duration: 0.3 },
+                  boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)"
+                }}
+              >
+                <Card className="glass-card p-6 glow-orange-hover h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white">
+                      {point.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground text-lg mb-2">{point.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{point.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -268,8 +381,8 @@ const About = () => {
             <h2 className="heading-large text-foreground mb-4">
               Career <span className="text-orange-accent">Timeline</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A journey of legal excellence and continuous innovation
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              A Journey of Legal Expertise, Policy-Level Insight & Business-Focused Advisory
             </p>
 
             {/* Decorative element */}
@@ -351,9 +464,21 @@ const About = () => {
                           {item.year}
                         </span>
                       </div>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground mb-3">
                         {item.description}
                       </p>
+                      {item.details && (
+                        <div className="space-y-2">
+                          {item.details.map((detail, detailIndex) => (
+                            <div key={detailIndex} className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-orange-accent rounded-full mt-2 flex-shrink-0"></div>
+                              <p className="text-sm text-muted-foreground leading-relaxed">
+                                {detail}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </Card>
                   </motion.div>
                 </motion.div>
@@ -415,7 +540,7 @@ const About = () => {
               </motion.h2>
               
               <motion.blockquote 
-                className="text-2xl md:text-3xl font-medium text-foreground leading-relaxed font-heading mb-8 relative z-10"
+                className="text-2xl md:text-3xl font-medium text-foreground leading-relaxed font-heading mb-6 relative z-10"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -427,17 +552,30 @@ const About = () => {
               </motion.blockquote>
               
               <motion.p 
-                className="text-lg text-muted-foreground leading-relaxed relative z-10"
+                className="text-lg text-orange-accent font-semibold mb-6 relative z-10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                This belief is at the heart of every legal strategy I design.
+              </motion.p>
+              
+              <motion.div 
+                className="space-y-4 relative z-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                This philosophy drives every legal strategy I craft for my clients. I believe in proactive legal counsel 
-                that anticipates challenges, creates opportunities, and enables businesses to thrive in competitive markets. 
-                My approach combines deep legal expertise with practical business understanding, ensuring solutions that 
-                are both legally sound and commercially viable.
-              </motion.p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I approach the law not as a barrier, but as a tool to empower innovation, manage risk, and support long-term business growth. My goal is to deliver proactive legal counsel—advice that not only addresses current issues but anticipates future challenges and unlocks new opportunities.
+                </p>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  By combining deep legal expertise with a practical understanding of business, I craft solutions that are not just compliant, but commercially strategic. Whether drafting complex agreements or navigating regulatory frameworks, I focus on making the law work for your business—not the other way around.
+                </p>
+              </motion.div>
             </Card>
           </motion.div>
         </div>
@@ -459,7 +597,6 @@ const About = () => {
             ease: "easeInOut" 
           }}
         ></motion.div>
-        
         <motion.div 
           className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-primary/10 to-orange-accent/5 rounded-full blur-3xl"
           animate={{ 
@@ -474,268 +611,59 @@ const About = () => {
             delay: 2 
           }}
         ></motion.div>
-        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h2 
-              className="heading-medium text-foreground mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center text-4xl font-bold mb-8">
               Credentials & <span className="text-orange-accent">Recognition</span>
-            </motion.h2>
-            
-            <motion.div 
-              className="w-20 h-1 bg-gradient-to-r from-orange-accent to-primary rounded-full mx-auto mt-4"
-              initial={{ width: 0 }}
-              whileInView={{ width: 80 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            ></motion.div>
-            
-            <motion.p
-              className="text-muted-foreground max-w-xl mx-auto mt-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Recognized legal expertise with professional credentials and specialized certifications
-            </motion.p>
-          </motion.div>
-
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-            variants={staggerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              { 
-                icon: <motion.div 
-                  className="text-5xl relative"
-                  animate={{ 
-                    y: [0, -5, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 4, 
-                    repeat: Infinity,
-                    repeatType: "reverse" 
-                  }}
-                >
-                  <svg className="w-16 h-16 mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <motion.path 
-                      d="M50 10 L80 40 L50 70 L20 40 Z" 
-                      fill="url(#goldGradient)"
-                      stroke="#FFA500"
-                      strokeWidth="2"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 2, delay: 0.5 }}
-                    />
-                    <motion.path 
-                      d="M50 30 L65 45 L50 60 L35 45 Z" 
-                      fill="white"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.8 }}
-                      transition={{ duration: 1, delay: 1.5 }}
-                    />
-                    <motion.path 
-                      d="M30 75 L70 75 L70 90 L30 90 Z" 
-                      fill="url(#goldGradient)"
-                      stroke="#FFA500"
-                      strokeWidth="2"
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 1, delay: 1 }}
-                    />
-                    <defs>
-                      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#FFD700" />
-                        <stop offset="100%" stopColor="#FFA500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>,
-                title: "Bar Council Registration", 
-                description: "Registration No: [Number]",
-                buttonText: "Verify Credentials"
-              },
-              { 
-                icon: <motion.div 
-                  className="text-5xl relative"
-                  animate={{ 
-                    y: [0, -5, 0],
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    repeatType: "reverse" 
-                  }}
-                >
-                  <svg className="w-16 h-16 mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <motion.rect 
-                      x="25" y="20" width="50" height="60" rx="5"
-                      fill="#4169E1"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.8 }}
-                    />
-                    <motion.circle 
-                      cx="50" cy="40" r="15"
-                      fill="white"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                    />
-                    <motion.path 
-                      d="M38 65 H62 M38 73 H62"
-                      stroke="white"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.8, delay: 0.8 }}
-                    />
-                    <motion.path 
-                      d="M45 40 L48 43 L55 36"
-                      stroke="#4169E1"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.5, delay: 1.2 }}
-                    />
-                  </svg>
-                </motion.div>, 
-                title: "LinkedIn Profile", 
-                description: "Connect for legal insights",
-                link: "http://www.linkedin.com/in/gauri-saraswat-20b55017",
-                buttonText: "Connect Now"
-              },
-              { 
-                icon: <motion.div 
-                  className="text-5xl relative"
-                  animate={{ 
-                    y: [0, -5, 0],
-                    rotateY: [0, 10, 0, -10, 0]
-                  }}
-                  transition={{ 
-                    y: {
-                      duration: 3, 
-                      repeat: Infinity,
-                      repeatType: "reverse"
-                    },
-                    rotateY: {
-                      duration: 5, 
-                      repeat: Infinity,
-                      repeatType: "reverse"
-                    }
-                  }}
-                >
-                  <svg className="w-16 h-16 mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <motion.path 
-                      d="M30 70 L50 30 L70 70 L30 70 Z" 
-                      fill="url(#orangeGradient)"
-                      stroke="#FF8C00"
-                      strokeWidth="2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1 }}
-                    />
-                    <motion.path 
-                      d="M45 50 L55 50 L55 85 L45 85 Z" 
-                      fill="url(#orangeGradient)"
-                      stroke="#FF8C00"
-                      strokeWidth="2"
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.8, delay: 0.5 }}
-                    />
-                    <motion.circle 
-                      cx="50" cy="20" r="10"
-                      fill="#FFD700"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ 
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 20,
-                        delay: 0.8
-                      }}
-                    />
-                    <defs>
-                      <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#FFA500" />
-                        <stop offset="100%" stopColor="#FF8C00" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>, 
-                title: "Certifications", 
-                description: "Specialized legal training",
-                buttonText: "View Certifications"
-              }
-            ].map((credential, index) => (
-              <motion.div 
-                key={index}
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -10, 
-                  transition: { duration: 0.3 },
-                  boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)"
-                }}
-              >
-                <Card className="glass-card credential-card p-8 text-center glow-orange-hover h-full flex flex-col justify-between">
-                  <div>
-                    <motion.div 
-                      className="mb-6 credential-icon"
-                      initial={{ scale: 0.5, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ 
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 20,
-                        delay: 0.1 + (index * 0.1) 
-                      }}
-                      viewport={{ once: true }}
-                    >
-                      {credential.icon}
-                    </motion.div>
-                    <h3 className="font-semibold text-foreground text-xl mb-2">{credential.title}</h3>
-                    <p className="text-muted-foreground mb-6">{credential.description}</p>
-                  </div>
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {credential.link ? (
-                      <Button variant="outline" className="btn-outline-orange w-full" asChild>
-                        <a href={credential.link} target="_blank" rel="noopener noreferrer">
-                          {credential.buttonText}
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button variant="outline" className="btn-outline-orange w-full">
-                        {credential.buttonText}
-                      </Button>
-                    )}
-                  </motion.div>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            </h2>
+            <div className="mb-8">
+              <span className="text-2xl font-bold text-black flex items-center gap-2">
+                <span role="img" aria-label="brain">🧠</span> Thought Leadership & Public Engagements
+              </span>
+            </div>
+            <ul className="list-disc pl-8 space-y-4 text-black text-lg">
+              <li>
+                <span className="font-bold">Guest Speaker</span> at <span className="italic">“Shaping Your Legal Future”</span>, Bharati Vidyapeeth University (2025)
+              </li>
+              <li>
+                <span className="font-bold">Podcast Guest:</span> <span className="italic">"Decoding Business Laws – Koffee @TEIF"</span>
+              </li>
+              <li>
+                <span className="font-bold">Facebook Live Host:</span> <span className="italic">Complexities of Law Relating to Senior Citizens</span>
+              </li>
+              <li>
+                <span className="font-bold">Speaker,</span> <span className="italic">Contracting Excellence & Advanced Negotiation</span>, International Business Intelligence (2025)
+              </li>
+              <li>
+                <span className="font-bold">Lecturer,</span> <span className="italic">Corporate Law Conclave</span>, BVIMR (2024)
+              </li>
+              <li>
+                <span className="font-bold">Trainer,</span> <span className="italic">Workforce Planning & Talent Management</span>, International Business Intelligence (2024)
+              </li>
+              <li>
+                <span className="font-bold">Speaker,</span> <span className="italic">Commercial Agreements Webinar</span>, Scripta Lex Law Firm (2021)
+              </li>
+              <li>
+                <span className="font-bold">Judge,</span> <span className="italic">Intra Moot Court Competition</span>, Scripta Lex Law Firm (2021)
+              </li>
+              <li>
+                <span className="font-bold">Speaker,</span> <span className="italic">Certified Course on IBC & Role of Insolvency Professionals</span>, LawInsider (2022)
+              </li>
+              <li>
+                <span className="font-bold">Interviewee,</span> <span className="italic">SuperLawyer</span>: Legal Compliance & Business Growth (2024)
+              </li>
+              <li>
+                <span className="font-bold">Featured,</span> <span className="italic">Investopedia</span>: Legal Advisory for Indian Businesses (2024)
+              </li>
+            </ul>
+            <div className="text-center mt-10">
+              <Button className="btn-gold" asChild>
+                <a href="http://www.linkedin.com/in/gauri-saraswat-20b55017" target="_blank" rel="noopener noreferrer">
+                  📞 Connect on LinkedIn
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 

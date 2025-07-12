@@ -80,7 +80,7 @@ const TestimonialSection = () => {
               {/* Testimonial Content */}
               <div className="relative z-10">
                 <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground leading-relaxed font-heading mb-6 md:mb-8">
-                  Turning legal headaches into simple solutions — no aspirin needed.
+                Transforming complex legal challenges into clear, actionable solutions — with strategy, not stress.
                 </blockquote>
                 
                 <div className="border-t border-border/50 pt-4 md:pt-6 flex flex-col md:flex-row md:items-center justify-between">
@@ -89,7 +89,7 @@ const TestimonialSection = () => {
                       My approach to legal consulting
                     </p>
                     <p className="text-orange-accent font-semibold text-lg md:text-xl">
-                      — Advocate Gauri Saraswat
+                      — Gauri Saraswat Corporate Lawyer
                     </p>
                   </div>
                   

@@ -5,27 +5,27 @@ import { Link } from "react-router-dom";
 const PracticeAreas = () => {
   const practiceAreas = [
     {
-      title: "Contract Drafting",
-      description: "Comprehensive contract drafting and review for SaaS agreements, NDAs, licensing deals, and commercial contracts.",
-      services: ["SaaS Agreements", "NDAs & Confidentiality", "Licensing Contracts", "Employment Agreements"],
+      title: "Contract Drafting & Negotiation",
+      description: "Comprehensive contract drafting and review tailored to your commercial goals, helping protect your interests and reduce risk.",
+      services: ["SaaS Agreements", "Non-Disclosure & Confidentiality Agreements (NDAs)", "Employment & Consultant Contracts", "Shareholder & Co-founder Agreements", "IP Licensing & Technology Transfer Agreements", "Vendor & Commercial Contracts"],
       icon: "📄"
     },
     {
       title: "Fintech Compliance",
-      description: "Navigate complex fintech regulations, RBI compliance, SARFAESI actions, and banking dispute resolution.",
-      services: ["RBI Compliance", "SARFAESI Actions", "Banking Disputes", "Payment Gateway Legal"],
+      description: "Legal advisory for fintech companies operating in complex and evolving regulatory frameworks, with a focus on compliance and risk mitigation.",
+      services: ["RBI & SEBI Regulatory Compliance", "SARFAESI Proceedings & Recovery Strategy", "Banking & NBFC Dispute Resolution", "Payment Gateway Legal Structuring", "KYC/AML & Data Protection Advisory"],
       icon: "💳"
     },
     {
-      title: "Insolvency (IBC)",
-      description: "Expert representation in IBC proceedings, NCLT matters, and corporate restructuring with proven success.",
-      services: ["IBC Proceedings", "NCLT Representation", "Corporate Restructuring", "Fraud Resolution"],
+      title: "Insolvency & Bankruptcy Code (IBC)",
+      description: "Specialized consultancy backed by prior experience with the Insolvency and Bankruptcy Board of India (IBBI). Providing strategic and results-driven representation in insolvency and restructuring matters.",
+      services: ["Representation before NCLT & Appellate Forums", "Fraudulent Transaction Analysis", "Corporate Debt Restructuring", "Stakeholder Representation (IP, Debtor, Creditor)", "Transaction Audit & Forensic Report Review"],
       icon: "⚖️"
     },
     {
-      title: "AI Legal Governance",
-      description: "Cutting-edge legal counsel for AI startups, data privacy compliance, and emerging technology regulations.",
-      services: ["AI Compliance", "Data Privacy Laws", "IP Protection", "Tech Startup Legal"],
+      title: "AI Legal Governance & Tech Law",
+      description: "Proactive legal counsel for AI-driven and tech-focused businesses to ensure innovation stay compliant and protected in a digital-first world.",
+      services: ["AI Governance & Risk Advisory", "GDPR & Indian Data Privacy Compliance", "Platform Terms, Disclaimers & Licensing", "Intellectual Property Protection & Assignment", "SaaS, Software Licensing & Cloud Service Contracts"],
       icon: "🤖"
     }
   ];
@@ -38,7 +38,7 @@ const PracticeAreas = () => {
             Core <span className="text-orange-accent">Practice Areas</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Specialized legal services tailored for modern businesses and innovative entrepreneurs
+            Specialized Legal Services for Modern Businesses and Innovation-Driven Entrepreneurs
           </p>
         </div>
 
@@ -64,13 +64,13 @@ const PracticeAreas = () => {
 
                   <div className="space-y-2">
                     <p className="text-sm font-medium text-orange-accent mb-2">Key Services:</p>
-                    <ul className="grid grid-cols-2 gap-2">
+                    <ul className="space-y-1">
                       {area.services.map((service, serviceIndex) => (
                         <li 
                           key={serviceIndex}
-                          className="text-sm text-muted-foreground flex items-center"
+                          className="text-sm text-muted-foreground flex items-start"
                         >
-                          <span className="w-1.5 h-1.5 bg-[hsl(var(--orange))] rounded-full mr-2"></span>
+                          <span className="w-1.5 h-1.5 bg-[hsl(var(--orange))] rounded-full mr-2 mt-2 flex-shrink-0"></span>
                           {service}
                         </li>
                       ))}
