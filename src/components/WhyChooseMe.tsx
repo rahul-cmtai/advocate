@@ -56,7 +56,7 @@ const WhyChooseMe = () => {
               }}
             >
               <Card
-                className="glass-card p-4 sm:p-6 text-center group cursor-pointer h-full min-h-[320px] sm:min-h-[370px] flex flex-col justify-between transition-shadow duration-300 hover:shadow-[0_0_24px_8px_rgba(255,115,0,0.5)]"
+                className="glass-card p-4 sm:p-6 text-center group cursor-pointer h-full min-h-[320px] sm:min-h-[370px] flex flex-col justify-between transition-shadow duration-300 hover:shadow-[0_0_16px_4px_rgba(255,115,0,0.18)]"
               >
                 <div className="flex flex-col flex-1 items-center justify-start">
                   <div className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">

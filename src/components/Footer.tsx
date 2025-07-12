@@ -12,9 +12,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", href: "#", icon: "💼" },
-    { name: "WhatsApp", href: "#", icon: "💬" },
-    { name: "Email", href: "mailto:legal@gaurisaraswat.com", icon: "📧" },
+    { name: "LinkedIn", href: "#", icon: "\uD83D\uDCBC" },
+    { name: "WhatsApp", href: "https://wa.me/9891324664", icon: "\uD83D\uDCAC" },
+    { name: "Email", href: "mailto:legal@gaurisaraswat.com", icon: "\uD83D\uDCEC" },
   ];
 
   return (
@@ -68,7 +68,8 @@ const Footer = () => {
             <h4 className="text-lg font-medium text-white mb-4">Connect</h4>
             <div className="space-y-3 mb-6">
               <p className="text-sm text-white flex items-center">
-                <span className="mr-2">📞</span> <span className="text-[#ffff00]">+91 [Phone Number]</span>
+                <span className="mr-2">\uD83D\uDCDE</span> 
+                <a href="https://wa.me/9891324664" target="_blank" rel="noopener noreferrer" className="text-[#ffff00] hover:underline">+91 98913 24664 (WhatsApp)</a>
               </p>
               <p className="text-sm text-white flex items-center">
                 <span className="mr-2">📧</span> <span className="text-[#ffff00]">legal@gaurisaraswat.com</span>

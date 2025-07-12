@@ -1,6 +1,6 @@
 import React from "react";
 
-const whatsappNumber = "919999999999"; // Apna WhatsApp number yahan daalein (country code ke sath, bina + ke)
+const whatsappNumber = "919891324664"; // Apna WhatsApp number yahan daalein (country code ke sath, bina + ke)
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
 const gmailAddress = "yourmail@gmail.com"; // Apna Gmail address yahan daalein
 const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${gmailAddress}`;

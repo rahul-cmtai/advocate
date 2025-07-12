@@ -51,7 +51,7 @@ const Navigation = () => {
             ))}
             
             <Button asChild className="btn-orange">
-              <Link to="/contact">Book Consultation</Link>
+              <a href="https://wa.me/9891324664" target="_blank" rel="noopener noreferrer">Book Consultation</a>
             </Button>
           </div>
 
@@ -85,7 +85,7 @@ const Navigation = () => {
                   ))}
                   <DrawerClose asChild>
                     <Button asChild className="btn-orange w-full mt-4">
-                      <Link to="/contact">Book Consultation</Link>
+                      <a href="https://wa.me/9891324664" target="_blank" rel="noopener noreferrer">Book Consultation</a>
                     </Button>
                   </DrawerClose>
                 </div>
