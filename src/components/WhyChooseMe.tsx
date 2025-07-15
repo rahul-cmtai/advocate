@@ -13,12 +13,12 @@ const features = [
     description: `With two years of hands-on experience at the Insolvency and Bankruptcy Board of India (IBBI), I bring deep, policy-level understanding of the Insolvency and Bankruptcy Code (IBC).\n\nI provide strategic representation in NCLT proceedings, and advise on fraudulent transactions, and assist stakeholders with resolution strategies and compliance.`
   },
   {
-    icon: "🚀",
+    icon: "🤝",
     title: "Trusted by Startups",
     description: `Helping innovative companies navigate complex legal landscapes from incorporation to scaling and exit strategies. Expertise in co-founder agreements, ESOPs, and data-driven contract frameworks.`
   },
   {
-    icon: "🤖",
+    icon: "🛡️",
     title: "AI Law & Data Privacy Advisor",
     description: `Forward-looking legal counsel for businesses operating in the tech and AI space.\nSpecialized in:\n• AI Governance & Legal Risk\n• GDPR & Indian Data Privacy Compliance\n• SaaS, Software Licensing & Platform Policies\n• Intellectual Property & IP Assignment Agreements`
   }

@@ -233,7 +233,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
+                    {/* <div className="flex items-start gap-3">
                       <span className="text-xl">📍</span>
                       <div>
                         <p className="font-medium text-foreground">Office</p>
@@ -242,7 +242,7 @@ const Contact = () => {
                           [City, State - PIN]
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-start gap-3">
                       <span className="text-xl">💼</span>

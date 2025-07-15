@@ -22,7 +22,7 @@ const Index = () => {
       <TestimonialSection />
       
       {/* Final CTA Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-8 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="cta-card glass-card p-6 sm:p-8 md:p-12 text-center max-w-4xl mx-auto glow-orange-hover">
             <h2 className="cta-heading heading-large text-foreground mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl">

@@ -19,12 +19,12 @@ const testimonials: TestimonialProps[] = [
     role: "Advocate-on-Record at Supreme Court of India"
   },
   {
-    text: "Gauri has been my legal advisor for years, helping me close tough business deals and legal battles. Her knowledge of corporate law and business scenarios is exceptional.",
+    text: "Gauri has been my legal advisor for years, helping me close tough business deals and legal battles. Her knowledge of corporate law and business scenarios is exceptional and insightful.",
     name: "Nishant Manchanda",
     role: "Business Operations & Supply Chain"
   },
   {
-    text: "I have worked with Gauri on several transactions and highly recommend her for contract drafting and vetting. Her expertise in legal documentation is outstanding.",
+    text: "I have worked with Gauri on several transactions and highly recommend her for contract drafting and vetting. Her expertise in legal documentation is outstanding and reliable.",
     name: "Subhash Bhutoria",
     role: "Forbes India Leading Individual Lawyer"
   },
@@ -34,7 +34,7 @@ const testimonials: TestimonialProps[] = [
     role: "Supplier Management & Strategic Sourcing"
   },
   {
-    text: "Working with Gauri has been a great experience. Her insights are always valuable and she demonstrates in-depth knowledge of her domain. A truly proficient professional.",
+    text: "Working with Gauri has been a great experience. Her insights are always valuable and she demonstrates in-depth knowledge of her domain. A truly proficient professional and trustworthy.",
     name: "Shubham J.",
     role: "BD, Projects & NSO"
   },
@@ -47,14 +47,17 @@ const testimonials: TestimonialProps[] = [
 
 const TestimonialCard = ({ text, name, role }: TestimonialProps) => {
   return (
-    <Card className="testimonial-card p-8 mx-4 my-2 w-96 h-80 flex flex-col justify-between bg-background/50 backdrop-blur-sm border-2 border-orange-accent/20 hover:border-orange-accent/40 transition-all duration-300">
-      <div className="flex-1">
-        <div className="text-4xl text-orange-accent mb-4 font-serif">"</div>
-        <p className="text-foreground font-medium leading-relaxed text-base">{text}</p>
+    <Card className="testimonial-card p-6 sm:p-10 mx-2 sm:mx-6 my-4 w-[90vw] max-w-xs sm:w-[480px] sm:max-w-none h-auto flex flex-col justify-between bg-background/50 backdrop-blur-sm border-2 border-orange-accent/20 hover:border-orange-accent/40 transition-all duration-300">
+      <div className="flex-1 flex flex-col justify-between">
+        <div>
+          <p className="text-foreground font-medium leading-relaxed text-lg mb-0 line-clamp-6 overflow-hidden">
+            <span className="text-3xl text-orange-accent font-serif align-baseline mr-1">“</span>{text}<span className="text-3xl text-orange-accent font-serif align-baseline ml-1">”</span>
+          </p>
+        </div>
       </div>
-      <div className="border-t border-border/50 pt-4 mt-6">
-        <p className="text-orange-accent font-semibold text-lg">{name}</p>
-        {role && <p className="text-muted-foreground text-sm mt-1">{role}</p>}
+      <div className="border-t border-border/50 pt-2 mt-2">
+        <p className="text-orange-accent font-semibold text-xl break-words">{name}</p>
+        {role && <p className="text-muted-foreground text-base mt-2 break-words">{role}</p>}
       </div>
     </Card>
   );

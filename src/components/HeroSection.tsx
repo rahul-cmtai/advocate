@@ -51,21 +51,21 @@ const HeroSection = () => {
             {/* Trust Badges */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-6">
               <div className="flex items-center gap-3 bg-[#23272F]/80 rounded-xl px-5 py-3 shadow border border-[#FFB347]/30 min-w-[170px]">
-                <Gavel className="w-6 h-6 text-[#FFB347]" />
+                <Gavel className="w-8 h-8 text-[#FFB347]" />
                 <div>
                   <div className="text-2xl font-bold text-[#FFB347]">15+</div>
                   <div className="text-sm text-gray-200 font-medium">Years Experience</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-[#23272F]/80 rounded-xl px-5 py-3 shadow border border-[#FFB347]/30 min-w-[170px]">
-                <Landmark className="w-6 h-6 text-[#FFB347]" />
+                <Landmark className="w-8 h-8 text-[#FFB347]" />
                 <div>
                   <div className="text-2xl font-bold text-[#FFB347]">50Cr+</div>
                   <div className="text-sm text-gray-200 font-medium">Clients Savings</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-[#23272F]/80 rounded-xl px-5 py-3 shadow border border-[#FFB347]/30 min-w-[170px]">
-                <Scale className="w-6 h-6 text-[#FFB347]" />
+                <Scale className="w-8 h-8 text-[#FFB347]" />
                 <div>
                   <div className="text-2xl font-bold text-[#FFB347]">100+</div>
                   <div className="text-sm text-gray-200 font-medium">Startups Helped</div>

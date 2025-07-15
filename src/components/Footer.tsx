@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import legalHeroBg from "@/assets/legal-hero-bg.jpg";
+// No local image import needed for external Unsplash image
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,21 +21,21 @@ const Footer = () => {
     <footer
       className="relative border-t border-border/30 overflow-hidden"
       style={{
-        backgroundImage: `url(${legalHeroBg})`,
+        backgroundImage: 'url(https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Light orange overlay background */}
-      <div className="absolute inset-0 z-0" style={{ background: 'rgba(255, 152, 0, 0.18)' }} />
+      {/* Blue overlay background (like hero section) */}
+      <div className="absolute inset-0 z-0" style={{ background: 'rgba(0, 60, 255, 0.18)' }} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Brand Section */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-4 font-heading">
-              Advocate Gauri Saraswat
+               Gauri Saraswat Advocate
             </h3>
             <p className="text-white text-sm leading-relaxed mb-4">
               Strategic legal solutions for modern businesses. Expert counsel in contract law, 

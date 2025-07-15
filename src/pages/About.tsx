@@ -437,7 +437,7 @@ const About = () => {
                       animation: `pulse 2s infinite ${index * 0.5}s`
                     }}
                   ></div>
-                  {item.year.slice(-2)}
+                  {item.year.includes("Present") ? "P" : item.year.slice(-2)}
                 </motion.div>
 
                 {/* Content */}
@@ -658,8 +658,8 @@ const About = () => {
             </ul>
             <div className="text-center mt-10">
               <Button className="btn-gold" asChild>
-                <a href="http://www.linkedin.com/in/gauri-saraswat-20b55017" target="_blank" rel="noopener noreferrer">
-                  📞 Connect on LinkedIn
+                <a href="/contact">
+                  📞 Connect
                 </a>
               </Button>
             </div>
