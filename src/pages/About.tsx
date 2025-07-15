@@ -244,7 +244,7 @@ const About = () => {
               </motion.h1>
               
               <motion.p 
-                className="text-lg text-orange-accent font-semibold mb-4"
+                className="text-lg text-black font-semibold mb-4"
                 variants={itemVariants}
               >
                 Litigation | IBC & Contract Specialist | Regulatory & Technology Law Advisor
@@ -319,9 +319,11 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-orange-accent">🔍</span> Core Areas of Practice
+              <span className="text-orange-accent">🛡️</span> Core Practice Areas
             </motion.h2>
-            
+            <motion.p className="text-lg text-muted-foreground mt-2">
+              Specialized Legal Services for Modern Businesses and Innovation-Driven Entrepreneurs
+            </motion.p>
             <motion.div 
               className="w-20 h-1 bg-gradient-to-r from-orange-accent to-primary rounded-full mx-auto mt-4"
               initial={{ width: 0 }}
@@ -332,35 +334,116 @@ const About = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
             variants={staggerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {supportPoints.map((point, index) => (
-              <motion.div 
-                key={index}
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -5, 
-                  transition: { duration: 0.3 },
-                  boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)"
-                }}
-              >
-                <Card className="glass-card p-6 glow-orange-hover h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white">
-                      {point.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground text-lg mb-2">{point.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{point.description}</p>
-                    </div>
+            {/* Contract Drafting & Negotiation */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+            >
+              <Card className="glass-card p-6 glow-orange-hover h-full">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">📄</div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">Contract Drafting & Negotiation</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Comprehensive contract drafting and review tailored to your commercial goals, helping protect your interests and reduce risk.
+                    </p>
+                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                      <li>SaaS Agreements</li>
+                      <li>Non-Disclosure & Confidentiality Agreements (NDAs)</li>
+                      <li>Employment & Consultant Contracts</li>
+                      <li>Shareholder & Co-founder Agreements</li>
+                      <li>IP Licensing & Technology Transfer Agreements</li>
+                      <li>Vendor & Commercial Contracts</li>
+                    </ul>
                   </div>
-                </Card>
-              </motion.div>
-            ))}
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Fintech Compliance */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+            >
+              <Card className="glass-card p-6 glow-orange-hover h-full">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">💳</div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">Fintech Compliance</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Legal advisory for fintech companies operating in complex and evolving regulatory frameworks, with a focus on compliance and risk mitigation.
+                    </p>
+                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                      <li>RBI & SEBI Regulatory Compliance</li>
+                      <li>SARFAESI Proceedings & Recovery Strategy</li>
+                      <li>Banking & NBFC Dispute Resolution</li>
+                      <li>Payment Gateway Legal Structuring</li>
+                      <li>KYC/AML & Data Protection Advisory</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Insolvency & Bankruptcy Code (IBC) */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+            >
+              <Card className="glass-card p-6 glow-orange-hover h-full">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">⚖️</div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">Insolvency & Bankruptcy Code (IBC)</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Specialized consultancy backed by prior experience with the Insolvency and Bankruptcy Board of India (IBBI). Providing strategic and results-driven representation in insolvency and restructuring matters.
+                    </p>
+                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                      <li>Representation before NCLT & Appellate Forums</li>
+                      <li>Fraudulent Transaction Analysis</li>
+                      <li>Corporate Debt Restructuring</li>
+                      <li>Stakeholder Representation (IP, Debtor, Creditor)</li>
+                      <li>Transaction Audit & Forensic Report Review</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* AI Legal Governance & Tech Law */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+            >
+              <Card className="glass-card p-6 glow-orange-hover h-full">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">🤖</div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">AI Legal Governance & Tech Law</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Proactive legal counsel for AI-driven and tech-focused businesses to ensure innovation stays compliant and protected in a digital-first world.
+                    </p>
+                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                      <li>AI Governance & Risk Advisory</li>
+                      <li>GDPR & Indian Data Privacy Compliance</li>
+                      <li>Platform Terms, Disclaimers & Licensing</li>
+                      <li>Intellectual Property Protection & Assignment</li>
+                      <li>SaaS, Software Licensing & Cloud Service Contracts</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -216,16 +216,6 @@ const Blog: React.FC = () => {
         
         {/* Search & Filter Controls */}
         <div className="flex flex-col md:flex-row gap-4 mb-10 justify-between">
-          <div className="relative w-full md:w-80">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input 
-              placeholder="Search blogs..." 
-              className="pl-10"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          
           <div className="flex gap-2">
             {tags.length > 0 && (
               <DropdownMenu>
@@ -253,6 +243,15 @@ const Blog: React.FC = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             )}
+          </div>
+          <div className="relative w-full md:w-80">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input 
+              placeholder="Search blogs..." 
+              className="pl-10"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
         </div>
         
