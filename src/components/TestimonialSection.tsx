@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import advocatePortrait from "@/assets/advocate-portrait.jpg";
+import advocatePortrait from "@/assets/advocate-portrait1.jpg";
 import { motion } from "framer-motion";
 
 const TestimonialSection = () => {
@@ -35,7 +35,7 @@ const TestimonialSection = () => {
                 {/* Text overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
                   <p className="text-xl md:text-2xl font-medium font-heading">
-                    "Law should enable growth,<br /> not limit it."
+                    "Law should enable growth,<br /> not seek to limit it."
                   </p>
                   <p className="text-xs md:text-sm mt-2 text-white/80">This philosophy drives every strategy I craft</p>
                 </div>
@@ -81,9 +81,9 @@ const TestimonialSection = () => {
             <Card className="quote-card glass-card p-6 md:p-8 lg:p-12 relative transform hover:scale-[1.01] transition-all duration-300 border-[1px] border-orange-accent/20">
               {/* Testimonial Content */}
               <div className="relative z-10">
-                <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground leading-relaxed font-heading mb-6 md:mb-8">
-                  Transforming complex legal challenges into clear, actionable solutions — with strategy, not stress.
-                </blockquote>
+                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground leading-relaxed font-heading mb-6 md:mb-8">
+                  “Transforming complex legal challenges into clear, actionable solutions — with strategy, not stress.”
+                </div>
 
                 <div className="border-t border-border/50 pt-4 md:pt-6 flex flex-col md:flex-row md:items-center justify-between">
                   <div>

@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from "@/components/ui/drawer";
+import logo from "@/assets/logo1.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -20,19 +21,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            {/* Attractive SVG Logo with Black and Orange */}
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="28" cy="28" r="25" fill="#FF7F50" stroke="#111" strokeWidth="2.5"/>
-              <text x="50%" y="56%" textAnchor="middle" fill="#111" fontSize="25" fontWeight="bold" fontFamily="'Segoe UI',sans-serif" dy=".3em">GS</text>
-              {/* Justice Scales Icon (Black) */}
-              <g>
-                <path d="M28 17v16" stroke="#111" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M20 33c0 4 3.2 7.2 8 7.2s8-3.2 8-7.2" stroke="#111" strokeWidth="1.7"/>
-                <path d="M17.5 33c0 2.4 1.9 4.3 4.3 4.3s4.3-1.9 4.3-4.3" stroke="#111" strokeWidth="1.2"/>
-                <path d="M38.5 33c0 2.4-1.9 4.3-4.3 4.3s-4.3-1.9-4.3-4.3" stroke="#111" strokeWidth="1.2"/>
-                <circle cx="28" cy="17" r="1.7" fill="#111"/>
-              </g>
-            </svg>
+            <img src={logo} alt="Logo" className="h-14 w-14 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

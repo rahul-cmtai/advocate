@@ -229,7 +229,7 @@ const Contact = () => {
                       <span className="text-xl">📧</span>
                       <div>
                         <p className="font-medium text-foreground">Email</p>
-                        <p className="text-muted-foreground text-sm">legal@gaurisaraswat.com</p>
+                        <p className="text-muted-foreground text-sm">decodelawwithgauri@gmail.com</p>
                       </div>
                     </div>
 

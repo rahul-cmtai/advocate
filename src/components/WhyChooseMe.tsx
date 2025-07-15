@@ -65,7 +65,7 @@ const WhyChooseMe = () => {
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold text-foreground mb-2 font-heading leading-snug">
                     {feature.title}
                   </h3>
-                  <div className="flex-1 flex items-center">
+                  <div>
                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed whitespace-pre-line text-left w-full mx-auto">
                       {feature.description}
                     </p>

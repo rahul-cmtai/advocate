@@ -60,7 +60,7 @@ const HeroSection = () => {
               <div className="flex items-center gap-3 bg-[#23272F]/80 rounded-xl px-5 py-3 shadow border border-[#FFB347]/30 min-w-[170px]">
                 <Landmark className="w-8 h-8 text-[#FFB347]" />
                 <div>
-                  <div className="text-2xl font-bold text-[#FFB347]">50Cr+</div>
+                  <div className="text-2xl font-bold text-[#FFB347]">50 Cr+</div>
                   <div className="text-sm text-gray-200 font-medium">Clients Savings</div>
                 </div>
               </div>
@@ -84,10 +84,10 @@ const HeroSection = () => {
                 className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-[#FFB347] z-10 bg-white"
               />
               <div className="absolute bottom-4 left-4 right-4 glass-card rounded-xl p-5 backdrop-blur-lg bg-white/60 shadow-xl border-2 border-[#FFB347] z-20 flex items-center gap-3">
-                <Scale className="w-6 h-6 text-[#FF9800]" />
+                <Scale className="w-12 h-8 text-[#FF9800]" />
                 <div>
                   <p className="text-base font-bold text-gray-900">Advocate Gauri Saraswat</p>
-                  <p className="text-xs text-muted-foreground">Expert in Contract Law & IBC Litigation</p>
+                  <p className="text-xs text-muted-foreground">Expert in Contract Law & (IBC) Insolvency and Bankruptcy Code Litigation</p>
                 </div>
               </div>
             </div>
