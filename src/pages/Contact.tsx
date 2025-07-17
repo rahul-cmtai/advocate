@@ -248,7 +248,7 @@ const Contact = () => {
                       <span className="text-xl">💼</span>
                       <div>
                         <p className="font-medium text-foreground">LinkedIn</p>
-                        <p className="text-muted-foreground text-sm">Professional network</p>
+                        <a href="https://www.linkedin.com/in/gauri-saraswat-20b55017/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:underline">Connect on LinkedIn</a>
                       </div>
                     </div>
                   </div>

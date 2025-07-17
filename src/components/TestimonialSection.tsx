@@ -91,7 +91,7 @@ const TestimonialSection = () => {
                       My approach to legal consulting
                     </p>
                     <p className="text-orange-accent font-semibold text-lg md:text-xl">
-                      — Gauri Saraswat Corporate Lawyer
+                      — Gauri Saraswat Advocate
                     </p>
                   </div>
 

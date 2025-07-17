@@ -319,10 +319,10 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-orange-accent">🛡️</span> Core Practice Areas
+              <span className="text-orange-accent">🛡️</span> Core Areas of Legal Expertise
             </motion.h2>
             <motion.p className="text-lg text-muted-foreground mt-2">
-              Legal expertise tailored for startups, corporates, and innovation-led businesses
+              A multi-disciplinary practice grounded in law, shaped by experience, and aligned with business impact
             </motion.p>
             <motion.div 
               className="w-20 h-1 bg-gradient-to-r from-orange-accent to-primary rounded-full mx-auto mt-4"
@@ -334,13 +334,38 @@ const About = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             variants={staggerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {/* 1. Corporate & Commercial Advisory */}
+            {/* 1. Corporate & Transactional Advisory */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+            >
+              <Card className="glass-card p-6 glow-orange-hover h-full">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">📁</div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">1. Corporate & Transactional Advisory</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      From incorporation to investment, I advise businesses on structuring, stakeholder arrangements, governance, and strategic operations.
+                    </p>
+                    <div className="text-sm text-black font-semibold mb-1">Scope Includes:</div>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                      <li>Business setup & restructuring</li>
+                      <li>Shareholder, co-founder & board advisory</li>
+                      <li>ESOPs, governance frameworks</li>
+                      <li>Retainer counsel services for startups and SMEs</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* 2. Contract Drafting & Commercial Transactions */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
@@ -349,23 +374,23 @@ const About = () => {
                 <div className="flex items-start gap-4 mb-2">
                   <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">📄</div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">1. Corporate & Commercial Advisory</h3>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">2. Contract Drafting & Commercial Transactions</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Legal support across business structuring, contract negotiation, and regulatory compliance. Helping businesses build strong foundations and scale with legal clarity.
+                      Expertly crafted agreements that balance legal precision with business needs. Supporting scale, compliance, and investor readiness.
                     </p>
-                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <div className="text-sm text-black font-semibold mb-1">Scope Includes:</div>
                     <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                      <li>Incorporation & restructuring</li>
-                      <li>Shareholder & co-founder agreements</li>
-                      <li>ESOPs, MoUs & employment contracts</li>
-                      <li>General legal counsel for startups & SMEs</li>
+                      <li>SaaS, IP & licensing contracts</li>
+                      <li>Vendor, services & consultancy agreements</li>
+                      <li>Employment frameworks & confidentiality clauses</li>
+                      <li>Cross-border MoUs & technology deals</li>
                     </ul>
                   </div>
                 </div>
               </Card>
             </motion.div>
 
-            {/* 2. Insolvency, IBC & Financial Regulation */}
+            {/* 3. Insolvency, IBC & Financial Regulation */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
@@ -374,66 +399,67 @@ const About = () => {
                 <div className="flex items-start gap-4 mb-2">
                   <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">⚖️</div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">2. Insolvency, IBC & Financial Regulation</h3>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">3. Insolvency, IBC & Financial Regulation</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Comprehensive legal solutions for businesses facing financial stress or regulatory hurdles. Informed by experience at the Insolvency and Bankruptcy Board of India (IBBI).
+                      Advisory and litigation informed by policy-level insights from IBBI. Focused on high-stakes matters in restructuring and regulatory compliance.
                     </p>
-                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <div className="text-sm text-black font-semibold mb-1">Scope Includes:</div>
                     <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                      <li>IBC strategy & NCLT representation</li>
-                      <li>Forensic audit & fraudulent transaction review</li>
-                      <li>SARFAESI & recovery matters</li>
-                      <li>RBI/SEBI/MCA regulatory compliance</li>
+                      <li>NCLT/NCLAT proceedings</li>
+                      <li>Insolvency resolution strategies</li>
+                      <li>Transaction audit & forensic review</li>
+                      <li>SARFAESI actions & RBI/SEBI compliance</li>
                     </ul>
                   </div>
                 </div>
               </Card>
             </motion.div>
 
-            {/* 3. Contract Law, Tech & Data Compliance */}
+            {/* 4. Tech Law, Data Privacy & AI Compliance */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
             >
               <Card className="glass-card p-6 glow-orange-hover h-full">
                 <div className="flex items-start gap-4 mb-2">
-                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">📜</div>
+                  <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">🤖</div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">3. Contract Law, Tech & Data Compliance</h3>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">4. Tech Law, Data Privacy & AI Compliance</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Drafting robust, scalable legal frameworks for SaaS, IP, platform operations, and privacy compliance in tech-first businesses.
+                      Legal support for emerging technology companies navigating evolving laws in India and abroad.
                     </p>
-                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <div className="text-sm text-black font-semibold mb-1">Scope Includes:</div>
                     <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                      <li>SaaS & software licensing</li>
-                      <li>NDAs, IP, and commercial contracts</li>
-                      <li>AI governance & data privacy (GDPR/PDP Bill)</li>
-                      <li>Platform terms, disclaimers & cloud contracts</li>
+                      <li>AI law & ethical governance</li>
+                      <li>GDPR & Indian data protection frameworks</li>
+                      <li>Platform terms & digital risk review</li>
+                      <li>SaaS/cloud contracts & IP protection</li>
                     </ul>
                   </div>
                 </div>
               </Card>
             </motion.div>
-
-            {/* 4. Dispute Resolution & Criminal Defense */}
+            
+            {/* 5. Dispute Resolution & Criminal Defense */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.3 }, boxShadow: "0 10px 30px rgba(255, 152, 0, 0.15)" }}
+              className="md:col-span-2 mx-auto max-w-xl"
             >
               <Card className="glass-card p-6 glow-orange-hover h-full">
                 <div className="flex items-start gap-4 mb-2">
                   <div className="flex-shrink-0 bg-orange-accent p-3 rounded-full text-white text-2xl">⚔️</div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">4. Dispute Resolution & Criminal Defense</h3>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">5. Dispute Resolution & Criminal Defense</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Strategic representation in commercial disputes and criminal cases—including white-collar offenses and sensitive litigation—across jurisdictions.
+                      Strategic litigation services in both commercial and criminal matters, including white-collar crimes, POCSO, and contractual enforcement.
                     </p>
-                    <div className="text-sm text-black font-semibold mb-1">Key Services:</div>
+                    <div className="text-sm text-black font-semibold mb-1">Scope Includes:</div>
                     <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                      <li>Cheque bounce & commercial disputes</li>
-                      <li>POCSO, IPC 376 & criminal defense</li>
-                      <li>Bail & FIR quashing</li>
-                      <li>Consumer & contract enforcement cases</li>
+                      <li>Cheque bounce, breach of contract & consumer claims</li>
+                      <li>Criminal defense</li>
+                      <li>Bail, FIR quashing, and trial strategy</li>
+                      <li>Cross-jurisdictional litigation management</li>
                     </ul>
                   </div>
                 </div>

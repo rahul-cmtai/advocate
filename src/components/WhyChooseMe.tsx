@@ -36,7 +36,7 @@ const WhyChooseMe = () => {
             Blending Legal Precision with Business Strategy
           </p>
           <p className="text-md text-muted-foreground max-w-2xl mx-auto italic mb-2">
-            ("I don't just advise—I engineer legal outcomes")
+            ("I don't just advise - I engineer legal outcomes")
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             As a corporate lawyer with over 15 years of experience, I offer more than legal advice—I provide strategic legal solutions designed to empower businesses, manage risk, and drive growth.

@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", href: "#", icon: "\uD83D\uDCBC" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/gauri-saraswat-20b55017/", icon: "\uD83D\uDCBC" },
     { name: "WhatsApp", href: "https://wa.me/9891324664", icon: "\uD83D\uDCAC" },
     { name: "Email", href: "mailto:decodelawwithgauri@gmail.com", icon: "\uD83D\uDCEC" },
   ];
@@ -35,14 +35,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-4 font-heading">
-               Gauri Saraswat Advocate
+               Gauri Saraswat, Advocate
             </h3>
             <p className="text-white text-sm leading-relaxed mb-4">
-              Strategic legal solutions for modern businesses. Expert Counsel in Contract Law, 
+              Strategic legal solutions for modern businesses. Expert Counsel in Contract Law, Criminal Litigation
               Fintech Disputes, IBC Litigation, and AI Governance.
             </p>
             <p className="text-xs text-white">
-              Bar Council Registration: <span className="text-[#ffff00]">D/574/2010</span>
+              {/* Bar Council Registration: <span className="text-[#ffff00]">D/574/2010</span> */}
             </p>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border/30 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-white text-center md:text-left">
-            © {currentYear} <span className="text-[#ffff00]">Advocate Gauri Saraswat</span> · All rights reserved.
+            © {currentYear} <span className="text-[#ffff00]"> Gauri Saraswat, Advocate</span> · All rights reserved.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">

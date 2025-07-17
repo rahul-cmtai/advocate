@@ -84,10 +84,10 @@ const HeroSection = () => {
                 className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-[#FFB347] z-10 bg-white"
               />
               <div className="absolute bottom-4 left-4 right-4 glass-card rounded-xl p-5 backdrop-blur-lg bg-white/60 shadow-xl border-2 border-[#FFB347] z-20 flex items-center gap-3">
-                <Scale className="w-12 h-8 text-[#FF9800]" />
+                <Scale className="w-16 h-10 text-[#FF9800]" />
                 <div>
-                  <p className="text-base font-bold text-gray-900">Advocate Gauri Saraswat</p>
-                  <p className="text-xs text-muted-foreground">Expert in Contract Law & (IBC) Insolvency and Bankruptcy Code Litigation</p>
+                  <p className="text-base font-bold text-gray-900"> Gauri Saraswat, Advocate</p>
+                  <p className="text-xs">Corporate Law & Criminal Litigation</p>
                 </div>
               </div>
             </div>
