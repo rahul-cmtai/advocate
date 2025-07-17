@@ -22,7 +22,7 @@ const Terms = () => (
       <h2 className="text-xl font-semibold mt-8 mb-2">Confidentiality</h2>
       <p className="mb-4">We maintain strict confidentiality of all client information in accordance with professional legal standards and applicable laws.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Limitation of Liability</h2>
-      <p className="mb-4">While we strive to provide the highest quality legal services,  Gauri Saraswat Advocate is not liable for any damages arising from the use of this website or reliance on information provided herein. Legal outcomes depend on individual circumstances and cannot be guaranteed.</p>
+      <p className="mb-4">While we strive to provide the highest quality legal services,  Gauri Saraswat, Advocate is not liable for any damages arising from the use of this website or reliance on information provided herein. Legal outcomes depend on individual circumstances and cannot be guaranteed.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Changes to Terms</h2>
       <p className="mb-4">We reserve the right to update these Terms of Service at any time. Continued use of our website and services constitutes acceptance of the revised terms.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Contact</h2>

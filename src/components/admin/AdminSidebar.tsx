@@ -13,24 +13,34 @@ import {
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const AdminSidebar = () => {
+// Export these constants so they can be imported in AdminLayout
+export const SIDEBAR_WIDTH = 240;
+export const SIDEBAR_COLLAPSED = 70;
+
+interface AdminSidebarProps {
+  onToggle?: (isOpen: boolean) => void;
+}
+
+const AdminSidebar = ({ onToggle }: AdminSidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   
   // Auto-close sidebar on mobile when navigating
   useEffect(() => {
-    if (window.innerWidth < 768) {
+    if (isMobile) {
       setIsOpen(false);
-    } else {
-      setIsOpen(true);
     }
-  }, [location.pathname]);
+  }, [location.pathname, isMobile]);
   
   // Set initial state based on screen size
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      
+      if (mobile) {
         setIsOpen(false);
       } else {
         setIsOpen(true);
@@ -47,29 +57,40 @@ const AdminSidebar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Notify parent component when sidebar state changes
+  useEffect(() => {
+    if (onToggle) {
+      onToggle(isOpen);
+    }
+  }, [isOpen, onToggle]);
+
   const handleLogout = () => {
     localStorage.removeItem('admin-auth');
     navigate('/admin/login');
   };
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   const sidebarVariants = {
     open: { 
-      width: '240px',
+      width: `${SIDEBAR_WIDTH}px`,
       transition: { duration: 0.3 }
     },
     closed: { 
-      width: '70px',
+      width: `${SIDEBAR_COLLAPSED}px`,
       transition: { duration: 0.3 }
     },
     mobile: {
-      width: '240px',
+      width: `${SIDEBAR_WIDTH}px`,
       x: 0,
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3, ease: "easeOut" }
     },
     mobileClosed: {
-      width: '240px',
+      width: `${SIDEBAR_WIDTH}px`,
       x: '-100%',
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3, ease: "easeIn" }
     }
   };
 
@@ -96,16 +117,14 @@ const AdminSidebar = () => {
     }
   ];
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
   return (
     <>
-      {/* Mobile sidebar toggle */}
+      {/* Mobile sidebar toggle button */}
       <Button 
         variant="ghost" 
         size="icon" 
         className="fixed z-50 top-3 left-3 md:hidden bg-background/50 backdrop-blur-sm shadow-sm"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleSidebar}
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
@@ -118,7 +137,7 @@ const AdminSidebar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
+            onClick={toggleSidebar}
           />
         )}
       </AnimatePresence>
@@ -133,7 +152,7 @@ const AdminSidebar = () => {
         <div className="flex items-center justify-between p-4 border-b border-border/30">
           <motion.h2 
             className="font-bold text-lg tracking-tight text-orange-accent truncate"
-            animate={{ opacity: isOpen ? 1 : 0 }}
+            animate={{ opacity: (isOpen || isMobile) ? 1 : 0 }}
           >
             Admin Panel
           </motion.h2>
@@ -142,7 +161,7 @@ const AdminSidebar = () => {
             variant="ghost" 
             size="icon" 
             className="hidden md:flex"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleSidebar}
           >
             <ChevronRight className={`h-5 w-5 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} />
           </Button>
@@ -167,15 +186,20 @@ const AdminSidebar = () => {
                   <div className="flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <motion.span 
-                    className="ml-3 whitespace-nowrap"
-                    animate={{ 
-                      opacity: isOpen ? 1 : 0,
-                      x: isOpen ? 0 : -10
-                    }}
-                  >
-                    {item.name}
-                  </motion.span>
+                  {/* Always show text on mobile, animate on desktop */}
+                  {isMobile ? (
+                    <span className="ml-3 whitespace-nowrap">{item.name}</span>
+                  ) : (
+                    <motion.span 
+                      className="ml-3 whitespace-nowrap"
+                      animate={{ 
+                        opacity: isOpen ? 1 : 0,
+                        x: isOpen ? 0 : -10
+                      }}
+                    >
+                      {item.name}
+                    </motion.span>
+                  )}
                 </Link>
               );
             })}
@@ -189,15 +213,20 @@ const AdminSidebar = () => {
             onClick={handleLogout}
           >
             <LogOut className="h-5 w-5" />
-            <motion.span 
-              className="ml-3"
-              animate={{ 
-                opacity: isOpen ? 1 : 0,
-                x: isOpen ? 0 : -10
-              }}
-            >
-              Logout
-            </motion.span>
+            {/* Always show text on mobile, animate on desktop */}
+            {isMobile ? (
+              <span className="ml-3">Logout</span>
+            ) : (
+              <motion.span 
+                className="ml-3"
+                animate={{ 
+                  opacity: isOpen ? 1 : 0,
+                  x: isOpen ? 0 : -10
+                }}
+              >
+                Logout
+              </motion.span>
+            )}
           </Button>
         </div>
       </motion.div>
