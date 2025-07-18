@@ -13,7 +13,7 @@ import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import ServiceDetail from "./pages/ServiceDetail";
 import ScrollToTop from "./components/ScrollToTop";
-import seedDatabase from "./lib/seedData";
+// import seedDatabase from "./lib/seedData";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
@@ -31,7 +31,7 @@ const queryClient = new QueryClient();
 const App = () => {
   // Seed the database with initial data if collections are empty
   useEffect(() => {
-    seedDatabase();
+    // seedDatabase();
   }, []);
   
   return (

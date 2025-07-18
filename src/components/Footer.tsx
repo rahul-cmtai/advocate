@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-// No local image import needed for external Unsplash image
+import { 
+  Linkedin, 
+  MessageCircle, 
+  Mail, 
+  Youtube, 
+  Instagram,
+  Twitter
+} from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,9 +19,36 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/gauri-saraswat-20b55017/", icon: "\uD83D\uDCBC" },
-    { name: "WhatsApp", href: "https://wa.me/9891324664", icon: "\uD83D\uDCAC" },
-    { name: "Email", href: "mailto:decodelawwithgauri@gmail.com", icon: "\uD83D\uDCEC" },
+    { 
+      name: "LinkedIn", 
+      href: "https://www.linkedin.com/in/gauri-saraswat-20b55017/", 
+      icon: <Linkedin className="h-5 w-5" /> 
+    },
+    { 
+      name: "WhatsApp", 
+      href: "https://wa.me/9891324664", 
+      icon: <MessageCircle className="h-5 w-5" /> 
+    },
+    { 
+      name: "Email", 
+      href: "mailto:decodelawwithgauri@gmail.com", 
+      icon: <Mail className="h-5 w-5" /> 
+    },
+    { 
+      name: "Twitter", 
+      href: "https://x.com/SaraswatGa68365?t=rEJF5S1AsK9Jb9Aj09UOdQ&s=09", 
+      icon: <Twitter className="h-5 w-5" /> 
+    },
+    { 
+      name: "Instagram", 
+      href: "https://www.instagram.com/decodelawwithgauri?igsh=MXd6d3FlN3YwNHVydg==&utm_source=ig_contact_invite", 
+      icon: <Instagram className="h-5 w-5" /> 
+    },
+    { 
+      name: "YouTube", 
+      href: "https://www.youtube.com/@DecodelawwithGauri", 
+      icon: <Youtube className="h-5 w-5" /> 
+    },
   ];
 
   return (
@@ -68,11 +102,12 @@ const Footer = () => {
             <h4 className="text-lg font-medium text-white mb-4">Connect</h4>
             <div className="space-y-3 mb-6">
               <p className="text-sm text-white flex items-center">
-                <span className="mr-2">📞</span> 
+                <MessageCircle className="h-4 w-4 mr-2 text-[#ffff00]" /> 
                 <a href="https://wa.me/9891324664" target="_blank" rel="noopener noreferrer" className="text-[#ffff00] hover:underline">+91 98913 24664 (WhatsApp)</a>
               </p>
               <p className="text-sm text-white flex items-center">
-                <span className="mr-2">📧</span> <span className="text-[#ffff00]">decodelawwithgauri@gmail.com</span>
+                <Mail className="h-4 w-4 mr-2 text-[#ffff00]" /> 
+                <span className="text-[#ffff00]">decodelawwithgauri@gmail.com</span>
               </p>
               {/* <p className="text-sm text-white flex items-center">
                 <span className="mr-2">📍</span> <span className="text-[#ffff00]">[Office Address]</span>
@@ -80,7 +115,7 @@ const Footer = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -90,7 +125,7 @@ const Footer = () => {
                   className="w-10 h-10 bg-muted/50 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 glow-gold-hover"
                   aria-label={social.name}
                 >
-                  <span className="text-lg text-white">{social.icon}</span>
+                  {social.icon}
                 </a>
               ))}
             </div>

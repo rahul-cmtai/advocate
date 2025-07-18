@@ -327,7 +327,7 @@ const Services = () => {
               after understanding your specific requirements during our initial consultation.
             </p>
             <Button className="btn-gold">
-              Schedule Free Consultation
+              Schedule Consultation
             </Button>
           </div>
         </div>

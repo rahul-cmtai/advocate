@@ -653,7 +653,8 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <span className="text-5xl text-orange-accent absolute -top-6 -left-2 opacity-20">"</span>
-                "Law should enable growth, not limit it."
+                "Law should enable growth,
+                not seek to limit it.
                 <span className="text-5xl text-orange-accent absolute -bottom-10 -right-2 opacity-20">"</span>
               </motion.blockquote>
               
