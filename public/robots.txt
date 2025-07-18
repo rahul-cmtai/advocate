@@ -1,3 +1,9 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Allow specific crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +16,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://www.decodelawwithgauri.com/sitemap.xml

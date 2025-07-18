@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -67,6 +68,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact Advocate Gauri Saraswat - Legal Consultation"
+        description="Get in touch with Advocate Gauri Saraswat for expert legal consultation on contract law, fintech disputes, IBC matters, and technology law."
+        keywords="contact lawyer, legal consultation, advocate contact, Gauri Saraswat"
+        canonicalUrl="https://www.decodelawwithgauri.com/contact"
+      />
       <Navigation />
       
       {/* Hero Section */}

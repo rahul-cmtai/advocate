@@ -8,6 +8,7 @@ import { getCollection } from "@/lib/firebase";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import SEO from "@/components/SEO";
 
 interface Service {
   id: string;
@@ -191,6 +192,12 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Legal Services - Advocate Gauri Saraswat"
+        description="Specialized legal services for modern businesses including contract drafting, fintech disputes, IBC litigation, and AI governance."
+        keywords="legal services, contract drafting, fintech disputes, IBC litigation, AI governance, technology law"
+        canonicalUrl="https://www.decodelawwithgauri.com/services"
+      />
       <Navigation />
       
       {/* Hero Section */}

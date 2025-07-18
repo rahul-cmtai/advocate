@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Skeleton } from "@/components/ui/skeleton";
+import SEO from "@/components/SEO";
 
 interface BlogPost {
   id: string;
@@ -193,6 +194,12 @@ const Blog: React.FC = () => {
 
   return (
     <>
+      <SEO 
+        title="Legal Insights Blog - Advocate Gauri Saraswat"
+        description="Expert analysis and guidance on important legal topics including contract law, fintech regulations, insolvency matters, and technology law."
+        keywords="legal blog, legal insights, contract law, fintech regulations, insolvency matters, technology law"
+        canonicalUrl="https://www.decodelawwithgauri.com/blog"
+      />
       <Navigation />
       
       {/* Banner Section */}

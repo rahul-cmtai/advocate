@@ -8,12 +8,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import Privacy from "./Privacy";
-import Terms from "./Terms";
+import SEO from "@/components/SEO";
+import { LocalBusinessStructuredData } from "@/components/StructuredData";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Advocate Gauri Saraswat – Legal Solutions for Visionaries"
+        description="Strategic legal solutions for modern businesses. Expert in contract law, fintech disputes, IBC litigation, and AI law."
+        canonicalUrl="https://www.decodelawwithgauri.com"
+      />
+      <LocalBusinessStructuredData />
       <Navigation />
       <HeroSection />
       <WhyChooseMe />

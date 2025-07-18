@@ -6,6 +6,7 @@ import advocatePortrait from "@/assets/advocate-portrait.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, Trophy, Briefcase, BookOpen, Award, Clock, Star } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const About = () => {
   const timeline = [
@@ -154,6 +155,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About Advocate Gauri Saraswat - Expert Legal Counsel"
+        description="With 15+ years of experience, Advocate Gauri Saraswat provides expert legal counsel in corporate law, IBC matters, and technology law."
+        keywords="legal expert, advocate, corporate law, IBC specialist, technology law, Gauri Saraswat"
+        canonicalUrl="https://www.decodelawwithgauri.com/about"
+      />
       <Navigation />
       
       {/* Hero Section */}
