@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Trash2, Mail, Phone, Calendar, MessageSquare, ExternalLink } from 'lucide-react';
+import { Trash2, Mail, Phone, Calendar, MessageSquare, ExternalLink, Eye } from 'lucide-react';
 import { format } from 'date-fns';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { toast } from 'sonner';
@@ -76,6 +76,38 @@ const ContactLeads: React.FC = () => {
       return 'Invalid date';
     }
   };
+
+  // Message dialog component to be reused
+  const MessageDialog = ({ lead }: { lead: ContactLead }) => (
+    <DialogContent className="mx-4 sm:mx-auto max-h-[90vh] overflow-y-auto">
+      <DialogHeader>
+        <DialogTitle>Message from {lead.name}</DialogTitle>
+        <DialogDescription className="flex items-center text-sm">
+          <Calendar className="mr-2 h-4 w-4" />
+          {formatDate(lead.createdAt)}
+        </DialogDescription>
+      </DialogHeader>
+      <div className="space-y-2 mt-2">
+        {lead.subject && (
+          <div className="font-medium">{lead.subject}</div>
+        )}
+        <div className="text-sm whitespace-pre-line">{lead.message}</div>
+        <div className="pt-2 flex flex-col space-y-1">
+          <a href={`mailto:${lead.email}`} className="text-primary hover:underline text-sm flex items-center">
+            <Mail className="mr-2 h-4 w-4" />{lead.email}
+          </a>
+          {lead.phone && (
+            <a href={`tel:${lead.phone}`} className="hover:underline text-sm flex items-center">
+              <Phone className="mr-2 h-4 w-4" />{lead.phone}
+            </a>
+          )}
+        </div>
+      </div>
+      <DialogFooter>
+        <Button variant="outline" className="w-full sm:w-auto" onClick={() => setSelectedLead(null)}>Close</Button>
+      </DialogFooter>
+    </DialogContent>
+  );
 
   // Mobile card view for each lead
   const LeadCard = ({ lead }: { lead: ContactLead }) => (
@@ -157,34 +189,7 @@ const ContactLeads: React.FC = () => {
               View Full Message
             </Button>
           </DialogTrigger>
-          <DialogContent className="mx-4 sm:mx-auto max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Message from {lead.name}</DialogTitle>
-              <DialogDescription className="flex items-center text-sm">
-                <Calendar className="mr-2 h-4 w-4" />
-                {formatDate(lead.createdAt)}
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-2 mt-2">
-              {lead.subject && (
-                <div className="font-medium">{lead.subject}</div>
-              )}
-              <div className="text-sm whitespace-pre-line">{lead.message}</div>
-              <div className="pt-2 flex flex-col space-y-1">
-                <a href={`mailto:${lead.email}`} className="text-primary hover:underline text-sm flex items-center">
-                  <Mail className="mr-2 h-4 w-4" />{lead.email}
-                </a>
-                {lead.phone && (
-                  <a href={`tel:${lead.phone}`} className="hover:underline text-sm flex items-center">
-                    <Phone className="mr-2 h-4 w-4" />{lead.phone}
-                  </a>
-                )}
-              </div>
-            </div>
-            <DialogFooter>
-              <Button variant="outline" className="w-full sm:w-auto" onClick={() => setSelectedLead(null)}>Close</Button>
-            </DialogFooter>
-          </DialogContent>
+          <MessageDialog lead={lead} />
         </Dialog>
       </CardContent>
     </Card>
@@ -227,7 +232,7 @@ const ContactLeads: React.FC = () => {
                       <TableHead>Subject</TableHead>
                       <TableHead>Message</TableHead>
                       <TableHead>Date</TableHead>
-                      <TableHead className="w-[80px]">Actions</TableHead>
+                      <TableHead className="w-[120px] text-center">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -268,35 +273,52 @@ const ContactLeads: React.FC = () => {
                           </div>
                         </TableCell>
                         <TableCell>
-                          <AlertDialog>
-                            <AlertDialogTrigger asChild>
-                              <Button 
-                                size="icon" 
-                                variant="ghost" 
-                                className="h-8 w-8 text-destructive hover:text-destructive"
-                              >
-                                <Trash2 className="h-4 w-4" />
-                                <span className="sr-only">Delete</span>
-                              </Button>
-                            </AlertDialogTrigger>
-                            <AlertDialogContent className="mx-4 sm:mx-auto">
-                              <AlertDialogHeader>
-                                <AlertDialogTitle>Delete Lead</AlertDialogTitle>
-                                <AlertDialogDescription>
-                                  Are you sure you want to delete this lead? This action cannot be undone.
-                                </AlertDialogDescription>
-                              </AlertDialogHeader>
-                              <AlertDialogFooter className="flex-col sm:flex-row gap-2">
-                                <AlertDialogCancel className="w-full sm:w-auto">Cancel</AlertDialogCancel>
-                                <AlertDialogAction
-                                  className="bg-destructive hover:bg-destructive/90 w-full sm:w-auto"
-                                  onClick={() => handleDelete(lead.id)}
+                          <div className="flex items-center justify-center space-x-2">
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button 
+                                  size="icon" 
+                                  variant="ghost" 
+                                  className="h-8 w-8 text-primary hover:text-primary"
+                                  onClick={() => setSelectedLead(lead)}
                                 >
-                                  Delete
-                                </AlertDialogAction>
-                              </AlertDialogFooter>
-                            </AlertDialogContent>
-                          </AlertDialog>
+                                  <Eye className="h-4 w-4" />
+                                  <span className="sr-only">View</span>
+                                </Button>
+                              </DialogTrigger>
+                              <MessageDialog lead={lead} />
+                            </Dialog>
+                            
+                            <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <Button 
+                                  size="icon" 
+                                  variant="ghost" 
+                                  className="h-8 w-8 text-destructive hover:text-destructive"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                  <span className="sr-only">Delete</span>
+                                </Button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent className="mx-4 sm:mx-auto">
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>Delete Lead</AlertDialogTitle>
+                                  <AlertDialogDescription>
+                                    Are you sure you want to delete this lead? This action cannot be undone.
+                                  </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter className="flex-col sm:flex-row gap-2">
+                                  <AlertDialogCancel className="w-full sm:w-auto">Cancel</AlertDialogCancel>
+                                  <AlertDialogAction
+                                    className="bg-destructive hover:bg-destructive/90 w-full sm:w-auto"
+                                    onClick={() => handleDelete(lead.id)}
+                                  >
+                                    Delete
+                                  </AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </div>
                         </TableCell>
                       </TableRow>
                     ))}
